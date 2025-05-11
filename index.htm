@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <main class="main">
+        <video class="main-bg-video" autoplay="" loop="" muted="" playsinline="" poster="./assets/horizontal-bg.webp">
+            <source src="./assets/vertical-bg.mp4" type="video/mp4" media="(max-width: 990px)">
+            <source src="./assets/horizontal-bg.mp4" type="video/mp4" media="(min-width: 991px)">
+            Your browser does not support the video tag.
+        </video>
+        <section class="form_wrapper">
+            <div id="cat-container">
+                <div style="position: absolute; left: -4.9862px; top: -0.371265px;" class="layer" maxmovement="5"
+                    speed="2" inverse="true">
+                    <img src="./assets/cat/EARS_LAYER.webp" style="width: 100%; height: auto;">
+                    <label style="position: absolute"></label>
+                </div>
+                <div style="position: absolute; left: 0px; top: 0px;" class="layer" maxmovement="0" speed="0"
+                    inverse="true">
+                    <img src="./assets/cat/HEAD_LAYER.webp" style="width: 100%; height: auto;">
+                    <label style="position: absolute"></label>
+                </div>
+                <div style="position: absolute; left: 1.99734px; top: 0.103054px;" class="layer" maxmovement="2"
+                    speed="1" inverse="false">
+                    <img src="./assets/cat/EYES_LAYER.webp" style="width: 100%; height: auto;">
+                    <label style="position: absolute"></label>
+                </div>
+                <div style="position: absolute; left: 4.9862px; top: 0.371265px;" class="layer" maxmovement="5"
+                    speed="2" inverse="false">
+                    <img src="./assets/cat/MUZZLE_LAYER.webp" style="width: 100%; height: auto;">
+                    <label style="position: absolute"></label>
+                </div>
+            </div>
+
+            <form id="form" action="https://api.web3forms.com/submit" method="POST" autocomplete="on">
+                <input type="hidden" name="access_key" value="5fa9254a-2c79-49a6-a9a7-2333adfc922d">
+
+                <input type="hidden" name="from_name" value="Website Contact Form Submission">
+                <input type="hidden" name="subject" value="Message from blindcatvfx.com">
+
+                <div id="name-field">
+                    <input type="text" name="name" autocomplete="name" required="">
+                </div>
+
+                <div id="email-field">
+                    <input type="email" name="email" autocomplete="email" required="">
+                </div>
+
+                <div id="message-field">
+                    <textarea name="message" rows="4" autocomplete="on" required=""></textarea>
+                </div>
+
+                <input type="checkbox" name="botcheck" class="hidden" style="display: none">
+
+                <div class="helper-wrapper">
+                    <button type="submit" name="submit-button"></button>
+                    <div id="result"></div>
+                </div>
+            </form>
+        </section>
+    </main>
+
+    <script type="text/javascript">
+        // CAT
+        const size = 100;
+        const scale = size / 100;
+        const layers = [];
+        onLoad();
+        function onLoad() {
+            const layerElements = document.querySelectorAll('.layer');
+            layerElements.forEach((layer) => {
+                const layerData = {};
+                const position = {
+                    x: 0,
+                    y: 0,
+                };
+                layerData.startPosition = position;
+                layerData.position = position;
+                layerData.maxMovement =
+                    parseInt(layer.getAttribute('maxMovement')) * scale;
+                layerData.speed = parseInt(layer.getAttribute('speed')) * scale;
+                layerData.inverse = layer.getAttribute('inverse');
+                layers.push(layerData);
+                console.log(layerData);
+                const img = layer.querySelector('img');
+                img.style.width = size + '%';
+                img.style.height = 'auto';
+            });
+        }
+
+        window.addEventListener('mousemove', (event) => {
+            const x = event.movementX;
+            const y = event.movementY;
+            const layerElements = document.querySelectorAll('.layer');
+            const rawInput = vectorNormalize(x, y);
+            for (let i = 0; i < layers.length; i++) {
+                const layer = layers[i];
+                let speed = layer.speed;
+                if (layer.inverse === 'true') {
+                    speed = -layer.speed;
+                }
+                const input = vectorMultiply(rawInput, speed);
+                const rawPosition = vectorAdd(layer.position, input);
+                let newPosition = vectorClampToDistance(
+                    layer.startPosition,
+                    rawPosition,
+                    layer.maxMovement
+                );
+                layer.position = newPosition;
+                const element = layerElements[i];
+                //element.querySelector('label').innerText = `x: ${newPosition.x} y: ${newPosition.y}`;
+                element.style.left = newPosition.x + 'px';
+                element.style.top = newPosition.y + 'px';
+            }
+        });
+
+        function vectorNormalize(x, y) {
+            const length = Math.sqrt(x * x + y * y);
+            if (length === 0) return { x: 0, y: 0 };
+            return { x: x / length, y: y / length };
+        }
+
+        function vectorAdd(a, b) {
+            return { x: a.x + b.x, y: a.y + b.y };
+        }
+
+        function vectorMultiply(a, b) {
+            return { x: a.x * b, y: a.y * b };
+        }
+
+        function vectorClampToDistance(a, b, distance) {
+            const dx = b.x - a.x;
+            const dy = b.y - a.y;
+            const length = Math.sqrt(dx * dx + dy * dy);
+            if (length > distance) {
+                return {
+                    x: a.x + (dx / length) * distance,
+                    y: a.y + (dy / length) * distance,
+                };
+            }
+            return b;
+        }
+
+        // CF
+        const form = document.getElementById('form');
+        const result = document.getElementById('result');
+
+        form.addEventListener('submit', function (e) {
+            e.preventDefault();
+            const formData = new FormData(form);
+            const object = Object.fromEntries(formData);
+            const json = JSON.stringify(object);
+            result.innerHTML = 'Please wait...';
+
+            fetch('https://api.web3forms.com/submit', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    Accept: 'application/json',
+                },
+                body: json,
+            })
+                .then(async (response) => {
+                    let json = await response.json();
+                    if (response.status == 200) {
+                        result.innerHTML = 'Form submitted successfully';
+                        result.classList.add('success');
+                    } else {
+                        console.log(response);
+                        result.innerHTML = json.message;
+                        result.classList.add('error');
+                    }
+                })
+                .catch((error) => {
+                    console.log(error);
+                    result.innerHTML = 'Something went wrong!';
+                })
+                .then(function () {
+                    form.reset();
+                    setTimeout(() => {
+                        result.style.display = 'none';
+                    }, 3000);
+                });
+        });
+    </script>
+</body>
+
+</html>
