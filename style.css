@@ -39,103 +39,17 @@ body {
   pointer-events: none;
 }
 
-.form_wrapper {
+.form_background {
   background-image: url(./assets/elements/horizontal/poster.webp);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  max-width: 1200px;
-  aspect-ratio: 1200 / 660;
   width: 100%;
   display: flex;
   justify-content: flex-start;
   align-items: flex-end;
-  padding: 0 100px 61px 92px;
   position: relative;
-}
-
-#form {
-  width: 817px;
-  height: 245px;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-
-  input,
-  textarea,
-  button {
-    width: 100%;
-    background-color: transparent;
-    border: none;
-    outline: none;
-    padding: 0 0.5rem;
-    font-size: 1rem;
-  }
-
-  input:-webkit-autofill,
-  input:-webkit-autofill:hover,
-  input:-webkit-autofill:focus,
-  input:-webkit-autofill:active {
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: #000;
-    font-size: 1rem;
-    transition: background-color 5000s ease-in-out 0s;
-  }
-
-  button {
-    aspect-ratio: 850 / 36;
-    margin-top: auto;
-    cursor: pointer;
-    background-image: url(./assets/elements/horizontal/button/idle.webp);
-    background-size: contain;
-    background-position: center;
-    background-repeat: no-repeat;
-  }
-
-  #name-field,
-  #email-field,
-  #message-field {
-    background-size: contain;
-    background-position: center;
-    background-repeat: no-repeat;
-  }
-
-  #name-field {
-    background-image: url(./assets/elements/horizontal/name/idle.webp);
-    input {
-      aspect-ratio: 500 / 47;
-      width: 29.25rem;
-      padding-left: 10rem;
-    }
-  }
-
-  #email-field {
-    background-image: url(./assets/elements/horizontal/email/idle.webp);
-    input {
-      aspect-ratio: 500 / 47;
-      width: 29.25rem;
-      padding-left: 10rem;
-    }
-  }
-
-  #message-field {
-    background-image: url(./assets/elements/horizontal/message/idle.webp);
-    aspect-ratio: 850 / 108;
-
-    textarea {
-      padding-top: 1rem;
-      resize: none;
-    }
-  }
-}
-
-#cat-container {
-  position: absolute;
-  top: 185px;
-  left: 21px;
-  width: 495px;
-  height: 303px;
-  z-index: 1;
+  aspect-ratio: 1920 / 1080;
 }
 
 #result {
@@ -156,6 +70,33 @@ body {
 .helper-wrapper {
   position: relative;
   width: 100%;
+}
+
+
+textarea {
+  resize: none;
+}
+
+#form-container {
+  }
+
+.input-field {
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+#about {
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+.input-fill {
+    width: 100%;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    font-size: clamp(0.001rem, 2.5vw, 2rem);
+    min-height: none;
 }
 
 @media (max-width: 12000000px) {
@@ -190,89 +131,76 @@ body {
       }
     }
   }
-
-  #cat-container {
-    top: 155px;
-    left: 16px;
-    width: 409px;
-  }
 }
 
 @media (max-width: 990px) {
-  .form_wrapper {
+  .form_background {
     background-image: url(./assets/elements/vertical/poster.webp);
     background-size: contain;
     max-width: 500px;
     max-height: 100vh;
-    aspect-ratio: 888 / 1920;
+    min-width: none;
+
+    aspect-ratio: 1080 / 1920;
     padding: 0;
     justify-content: center;
     position: relative;
   }
 
-  #form {
-    width: 55%;
-    height: 14%;
-    padding: 0;
+  #poster-container {
     position: absolute;
-    bottom: calc(25% + 1px);
-    left: 50%;
-    transform: translateX(-50%);
+    aspect-ratio: 690 / 1771;
+    height: 90.8%;
+    bottom: 4%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+  }
 
-    input,
-    textarea,
-    button {
-      font-size: 0.75rem;
-    }
+  #link-container {
+    height: 15.5%;
+  }
 
-    #name-field,
-    #email-field,
-    #message-field {
-      width: 100% !important;
-    }
+  #about {
+    width: 145%;
+    height: 23%;
+    background-image: url(./assets/elements/vertical/about.webp);
+  }
+
+  #form-container {
+    width: 70%;
+    height: 17%;
 
     button {
       background-image: url(./assets/elements/vertical/button/idle.webp);
-      aspect-ratio: 300 / 18;
-      width: calc(100% - 4px);
-      margin-right: auto;
-      margin-left: 1.75px;
-      font-size: 0.6rem;
     }
-
     #name-field {
       background-image: url(./assets/elements/vertical/name/idle.webp);
-
-      input {
-        aspect-ratio: 300 / 23;
-        padding-left: 4.5rem;
-        padding-bottom: 0.15rem;
-      }
     }
 
     #email-field {
       background-image: url(./assets/elements/vertical/email/idle.webp);
-
-      input {
-        aspect-ratio: 300 / 23;
-        padding-left: 4.5rem;
-        padding-bottom: 0.15rem;
-      }
     }
 
     #message-field {
       background-image: url(./assets/elements/vertical/message/idle.webp);
-
-      textarea {
-        aspect-ratio: 300 / 87;
-        padding-top: 0.3rem;
-        padding-left: 0.2rem;
-      }
     }
   }
 
   #cat-container {
-    display: none;
+    position: relative;
+    width: 100%;
+    height: 25%;
+    scale: 1.2;
+    margin-bottom: 17%;
+  }
+
+  #cat-back{
+    scale: 1.1;
+    img {
+      filter: brightness(0) saturate(100%) invert(54%) sepia(94%) saturate(749%) hue-rotate(338deg) brightness(101%) contrast(101%);
+    }
   }
 
   #result {
