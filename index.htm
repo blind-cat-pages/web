@@ -15,55 +15,63 @@
             <source src="./assets/elements/horizontal/horizontal-bg.mp4" type="video/mp4" media="(min-width: 991px)">
             Your browser does not support the video tag.
         </video>
-        <section class="form_wrapper">
-            <div id="cat-container">
-                <div style="position: absolute; left: -4.9862px; top: -0.371265px;" class="layer" maxmovement="5"
-                    speed="2" inverse="true">
-                    <img src="./assets/cat/EARS_LAYER.webp" style="width: 100%; height: auto;">
-                    <label style="position: absolute"></label>
+        <section class="form_background">
+            <div id="poster-container">
+                <div id="cat-container">
+                    <div id="cat-back" style="position: absolute; width: 100%; height: 100%;">
+                        <div style="position: absolute;" class="layer" maxmovement="5" speed="2" inverse="true">
+                            <img src="./assets/cat/EARS_LAYER.webp" style="width: 100%; height: auto;">
+                            <label style="position: absolute"></label>
+                        </div>
+                        <div style="position: absolute;" class="layer" maxmovement="0" speed="0" inverse="true">
+                            <img src="./assets/cat/HEAD_LAYER.webp" style="width: 100%; height: auto;">
+                            <label style="position: absolute"></label>
+                        </div>
+                        <div style="position: absolute;" class="layer" maxmovement="2" speed="1" inverse="false">
+                            <img src="./assets/cat/EYES_LAYER.webp" style="width: 100%; height: auto;">
+                            <label style="position: absolute"></label>
+                        </div>
+                        <div style="position: absolute;" class="layer" maxmovement="5" speed="2" inverse="false">
+                            <img src="./assets/cat/MUZZLE_LAYER.webp" style="width: 100%; height: auto;">
+                            <label style="position: absolute"></label>
+                        </div>
+                    </div>
+                    <div id="cat-front" style="position: absolute; width: 100%; height: 100%;">
+                        <div style="position: absolute;" class="layer" maxmovement="5" speed="2" inverse="true">
+                            <img src="./assets/cat/EARS_LAYER.webp" style="width: 100%; height: auto;">
+                            <label style="position: absolute"></label>
+                        </div>
+                        <div style="position: absolute;" class="layer" maxmovement="0" speed="0" inverse="true">
+                            <img src="./assets/cat/HEAD_LAYER.webp" style="width: 100%; height: auto;">
+                            <label style="position: absolute"></label>
+                        </div>
+                        <div style="position: absolute;" class="layer" maxmovement="2" speed="1" inverse="false">
+                            <img src="./assets/cat/EYES_LAYER.webp" style="width: 100%; height: auto;">
+                            <label style="position: absolute"></label>
+                        </div>
+                        <div style="position: absolute;" class="layer" maxmovement="5" speed="2" inverse="false">
+                            <img src="./assets/cat/MUZZLE_LAYER.webp" style="width: 100%; height: auto;">
+                            <label style="position: absolute"></label>
+                        </div>
+                    </div>
                 </div>
-                <div style="position: absolute; left: 0px; top: 0px;" class="layer" maxmovement="0" speed="0"
-                    inverse="true">
-                    <img src="./assets/cat/HEAD_LAYER.webp" style="width: 100%; height: auto;">
-                    <label style="position: absolute"></label>
+                <div id="about"></div>
+                <div id="form-container">
+                    <div id="name-field" class="input-field">
+                        <input class="input-fill" type="text" name="name" autocomplete="name" required="">
+                    </div>
+                    <div id="email-field" class="input-field">
+                        <input class="input-fill" type="email" name="email" autocomplete="email" required="">
+                    </div>
+                    <div id="message-field" class="input-field">
+                        <textarea class="input-fill" name="message" rows="4" autocomplete="on" required=""></textarea>
+                    </div>
+                    <button id="submit-button">Submit</button>
                 </div>
-                <div style="position: absolute; left: 1.99734px; top: 0.103054px;" class="layer" maxmovement="2"
-                    speed="1" inverse="false">
-                    <img src="./assets/cat/EYES_LAYER.webp" style="width: 100%; height: auto;">
-                    <label style="position: absolute"></label>
-                </div>
-                <div style="position: absolute; left: 4.9862px; top: 0.371265px;" class="layer" maxmovement="5"
-                    speed="2" inverse="false">
-                    <img src="./assets/cat/MUZZLE_LAYER.webp" style="width: 100%; height: auto;">
-                    <label style="position: absolute"></label>
+                <div id="link-container">
+
                 </div>
             </div>
-
-            <form id="form" action="https://api.web3forms.com/submit" method="POST" autocomplete="on">
-                <input type="hidden" name="access_key" value="5fa9254a-2c79-49a6-a9a7-2333adfc922d">
-
-                <input type="hidden" name="from_name" value="Website Contact Form Submission">
-                <input type="hidden" name="subject" value="Message from blindcatvfx.com">
-
-                <div id="name-field">
-                    <input type="text" name="name" autocomplete="name" required="">
-                </div>
-
-                <div id="email-field">
-                    <input type="email" name="email" autocomplete="email" required="">
-                </div>
-
-                <div id="message-field">
-                    <textarea name="message" rows="4" autocomplete="on" required=""></textarea>
-                </div>
-
-                <input type="checkbox" name="botcheck" class="hidden" style="display: none">
-
-                <div class="helper-wrapper">
-                    <button type="submit" name="submit-button"></button>
-                    <div id="result"></div>
-                </div>
-            </form>
         </section>
     </main>
 
@@ -98,15 +106,46 @@
         window.addEventListener('mousemove', (event) => {
             const x = event.movementX;
             const y = event.movementY;
-            const layerElements = document.querySelectorAll('.layer');
             const rawInput = vectorNormalize(x, y);
+            MoveLayers(rawInput);
+        });
+
+        if (window.DeviceOrientationEvent) {
+            let lastGamma = null;
+            let lastBeta = null;
+            window.addEventListener('deviceorientation', (event) => {
+            const gamma = event.gamma || 0;
+            const beta = event.beta || 0;
+            if (lastGamma === null || lastBeta === null) {
+                lastGamma = gamma;
+                lastBeta = beta;
+                return;
+            }
+            // Calculate change in orientation
+            const deltaGamma = gamma - lastGamma;
+            const deltaBeta = beta - lastBeta;
+            lastGamma = gamma;
+            lastBeta = beta;
+            // Normalize and adjust sensitivity
+            const x = -deltaGamma;
+            const y = -deltaBeta;
+            if (Math.abs(deltaGamma) < 1 && Math.abs(deltaBeta) < 1) return;
+            const rawInput = vectorNormalize(x, y);
+            rawInput.x *= 0.5; // Adjust sensitivity
+            rawInput.y *= 0.5; // Adjust sensitivity
+            MoveLayers(rawInput);
+            });
+        }
+
+        function MoveLayers(position) {
+            const layerElements = document.querySelectorAll('.layer');
             for (let i = 0; i < layers.length; i++) {
                 const layer = layers[i];
                 let speed = layer.speed;
                 if (layer.inverse === 'true') {
                     speed = -layer.speed;
                 }
-                const input = vectorMultiply(rawInput, speed);
+                const input = vectorMultiply(position, speed);
                 const rawPosition = vectorAdd(layer.position, input);
                 let newPosition = vectorClampToDistance(
                     layer.startPosition,
@@ -119,7 +158,7 @@
                 element.style.left = newPosition.x + 'px';
                 element.style.top = newPosition.y + 'px';
             }
-        });
+        }
 
         function vectorNormalize(x, y) {
             const length = Math.sqrt(x * x + y * y);
