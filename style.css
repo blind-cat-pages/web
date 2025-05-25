@@ -40,7 +40,7 @@ body {
 }
 
 .form_wrapper {
-  background-image: url(./assets/blind-cat-vfx.webp);
+  background-image: url(./assets/elements/horizontal/poster.webp);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -86,7 +86,7 @@ body {
     aspect-ratio: 850 / 36;
     margin-top: auto;
     cursor: pointer;
-    background-image: url(./assets/button-bg.webp);
+    background-image: url(./assets/elements/horizontal/button/idle.webp);
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
@@ -101,7 +101,7 @@ body {
   }
 
   #name-field {
-    background-image: url(./assets/name-bg.webp);
+    background-image: url(./assets/elements/horizontal/name/idle.webp);
     input {
       aspect-ratio: 500 / 47;
       width: 29.25rem;
@@ -110,7 +110,7 @@ body {
   }
 
   #email-field {
-    background-image: url(./assets/email-bg.webp);
+    background-image: url(./assets/elements/horizontal/email/idle.webp);
 
     input {
       aspect-ratio: 500 / 55;
@@ -121,7 +121,7 @@ body {
   }
 
   #message-field {
-    background-image: url(./assets/message-bg.webp);
+    background-image: url(./assets/elements/horizontal/message/idle.webp);
     aspect-ratio: 850 / 108;
 
     textarea {
@@ -202,7 +202,7 @@ body {
 
 @media (max-width: 990px) {
   .form_wrapper {
-    background-image: url(./assets/blind-cat-vfx-mobile.webp);
+    background-image: url(./assets/elements/vertical/poster.webp);
     background-size: contain;
     max-width: 500px;
     max-height: 100vh;
@@ -234,7 +234,7 @@ body {
     }
 
     button {
-      background-image: url(./assets/button-bg-mobile.webp);
+      background-image: url(./assets/elements/vertical/button/idle.webp);
       aspect-ratio: 300 / 18;
       width: calc(100% - 4px);
       margin-right: auto;
@@ -243,7 +243,7 @@ body {
     }
 
     #name-field {
-      background-image: url(./assets/name-bg-mobile.webp);
+      background-image: url(./assets/elements/vertical/name/idle.webp);
 
       input {
         aspect-ratio: 300 / 23;
@@ -253,7 +253,7 @@ body {
     }
 
     #email-field {
-      background-image: url(./assets/email-bg-mobile.webp);
+      background-image: url(./assets/elements/vertical/email/idle.webp);
 
       input {
         aspect-ratio: 300 / 30;
@@ -263,7 +263,7 @@ body {
     }
 
     #message-field {
-      background-image: url(./assets/message-bg-mobile.webp);
+      background-image: url(./assets/elements/vertical/message/idle.webp);
 
       textarea {
         aspect-ratio: 300 / 87;
