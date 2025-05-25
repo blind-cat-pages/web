@@ -160,7 +160,7 @@ body {
   width: 100%;
 }
 
-@media (max-width: 1200px) {
+@media (max-width: 12000000px) {
   .form_wrapper {
     max-width: 990px;
     padding: 0 50px 50px 76px;
