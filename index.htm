@@ -126,12 +126,7 @@
             const deltaBeta = beta - lastBeta;
             lastGamma = gamma;
             lastBeta = beta;
-            // Normalize and adjust sensitivity
-            const x = -deltaGamma;
-            const y = -deltaBeta;
             const rawInput = vectorNormalize(x, y);
-            rawInput.x *= 10;
-            rawInput.y *= 10;
             MoveLayers(rawInput);
             });
         }
