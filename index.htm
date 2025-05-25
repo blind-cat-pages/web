@@ -118,8 +118,8 @@
             const x = -acc.x / 9.8;
             const y = -acc.y / 9.8;
             const rawInput = vectorNormalize(x, y);
-            rawInput.x *= 3; // Adjust sensitivity
-            rawInput.y *= 3; // Adjust sensitivity
+            rawInput.x *= 10; // Adjust sensitivity
+            rawInput.y *= 10; // Adjust sensitivity
             MoveLayers(rawInput);
             });
         }
