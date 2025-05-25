@@ -48,7 +48,11 @@
                     </div>
                 </div>
                 <div id="about"></div>
-                <div id="form-container">
+                <form id="form-container" action="https://api.web3forms.com/submit" method="POST" autocomplete="on">
+                    <input type="hidden" name="access_key" value="5fa9254a-2c79-49a6-a9a7-2333adfc922d">
+                    <input type="hidden" name="from_name" value="Website Contact Form Submission">
+                    <input type="hidden" name="subject" value="Message from blindcatvfx.com">
+
                     <div id="name-field" class="input-field">
                         <input class="input-fill" type="text" name="name" autocomplete="name" required="">
                         <div class="input-label"></div>
@@ -60,10 +64,25 @@
                     <div id="message-field" class="input-field">
                         <textarea class="input-fill" name="message" rows="4" autocomplete="on" required=""></textarea>
                     </div>
-                    <button id="submit-button">Submit</button>
-                </div>
-                <div id="link-container">
 
+                    <button type="submit" name="submit-button">Submit</button>
+                    <div id="result"></div>
+                </form>
+                <div id="link-container">
+                    <form class="contact" id="vimeo-hyperlink" action="https://vimeo.com/blindcatvfx" method="get" target="_blank">
+                        <button class="contact-button" type="submit" class="hyperlink-button"></button>
+                    </form>
+                    <form class="contact" id="linkedin-hyperlink" action="https://linkedin.com/blindcatvfx" method="get" target="_blank">
+                        <button class="contact-button" type="submit" class="hyperlink-button"></button>
+                    </form>
+                    <form class="contact" id="instagram-hyperlink" action="https://instagram.com/blindcatvfx" method="get" target="_blank">
+                        <button class="contact-button" type="submit" class="hyperlink-button"></button>
+                    </form>
+                    <div class="contact"></div>
+                    <div class="contact"></div>
+                    <form class="contact" id="email-hyperlink" action="mailto:hello@blindcatvfx.com" method="get" target="_blank">
+                        <button class="contact-button" type="submit" class="hyperlink-button"></button>
+                    </form>
                 </div>
             </div>
         </section>
@@ -108,26 +127,26 @@
             let lastGamma = null;
             let lastBeta = null;
             window.addEventListener('deviceorientation', (event) => {
-            const gamma = event.gamma || 0;
-            const beta = event.beta || 0;
-            if (lastGamma === null || lastBeta === null) {
+                const gamma = event.gamma || 0;
+                const beta = event.beta || 0;
+                if (lastGamma === null || lastBeta === null) {
+                    lastGamma = gamma;
+                    lastBeta = beta;
+                    return;
+                }
+                // Calculate change in orientation
+                const deltaGamma = gamma - lastGamma;
+                const deltaBeta = beta - lastBeta;
                 lastGamma = gamma;
                 lastBeta = beta;
-                return;
-            }
-            // Calculate change in orientation
-            const deltaGamma = gamma - lastGamma;
-            const deltaBeta = beta - lastBeta;
-            lastGamma = gamma;
-            lastBeta = beta;
-            // Normalize and adjust sensitivity
-            const x = -deltaGamma;
-            const y = -deltaBeta;
-            if (Math.abs(deltaGamma) < 1 && Math.abs(deltaBeta) < 1) return;
-            const rawInput = vectorNormalize(x, y);
-            rawInput.x *= 0.5; // Adjust sensitivity
-            rawInput.y *= 0.5; // Adjust sensitivity
-            MoveLayers(rawInput);
+                // Normalize and adjust sensitivity
+                const x = -deltaGamma;
+                const y = -deltaBeta;
+                if (Math.abs(deltaGamma) < 1 && Math.abs(deltaBeta) < 1) return;
+                const rawInput = vectorNormalize(x, y);
+                rawInput.x *= 0.5; // Adjust sensitivity
+                rawInput.y *= 0.5; // Adjust sensitivity
+                MoveLayers(rawInput);
             });
         }
 
@@ -182,8 +201,9 @@
         }
 
         // CF
-        const form = document.getElementById('form');
+        const form = document.getElementById('form-container');
         const result = document.getElementById('result');
+        const submitButton = form.querySelector('button[type="submit"]');
 
         form.addEventListener('submit', function (e) {
             e.preventDefault();
@@ -191,6 +211,7 @@
             const object = Object.fromEntries(formData);
             const json = JSON.stringify(object);
             result.innerHTML = 'Please wait...';
+            submitButton.disabled = true;
 
             fetch('https://api.web3forms.com/submit', {
                 method: 'POST',
@@ -219,6 +240,7 @@
                     form.reset();
                     setTimeout(() => {
                         result.style.display = 'none';
+                        submitButton.disabled = false;
                     }, 3000);
                 });
         });
