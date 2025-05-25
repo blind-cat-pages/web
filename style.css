@@ -192,6 +192,7 @@ textarea {
       background-image: url(./assets/elements/vertical/message/idle.webp);
       height: 40%;
       max-height: 40%;
+      margin-top: 5px;
     }
   }
 
