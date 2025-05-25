@@ -195,13 +195,6 @@ textarea {
     margin-bottom: 17%;
   }
 
-  #cat-back{
-    scale: 1.1;
-    img {
-      filter: brightness(0) saturate(100%) invert(54%) sepia(94%) saturate(749%) hue-rotate(338deg) brightness(101%) contrast(101%);
-    }
-  }
-
   #result {
     top: 30px;
     left: 0;
