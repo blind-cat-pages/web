@@ -81,6 +81,7 @@ textarea {
     background-size: cover;
     background-position: center;
     border-image-slice: 50% 50%;
+    position: relative;
   }
 
 #about {
@@ -132,6 +133,15 @@ textarea {
   }
 }
 
+.input-label {
+  background-repeat: no-repeat;
+  background-size: contain;
+  top: 4%;
+  left: 1%;
+  height: 92%;
+  position: absolute;
+}
+
 @media (max-width: 990px) {
   .form_background {
     background-image: url(./assets/elements/vertical/poster.webp);
@@ -173,19 +183,41 @@ textarea {
 
     button {
       background-image: url(./assets/elements/vertical/button/idle.webp);
-      height: 15%;
-      max-height: 15%;
+      width: 100%;
+      background-color: transparent;
+      border: none;
+      outline: none;
+      padding: 0 0.5rem;
+      font-size: 1rem;
+      margin-top: 10px;
     }
+    button:active {
+      background-image: url(./assets/elements/vertical/button/active.webp);
+    }
+
     #name-field {
       background-image: url(./assets/elements/vertical/name/idle.webp);
       height: 15%;
       max-height: 15%;
+      padding-left: 30%;
+
+      .input-label {
+        background-image: url(./assets/elements/vertical/name/label.webp);
+        aspect-ratio: 235/76;
+      }
     }
 
     #email-field {
       background-image: url(./assets/elements/vertical/email/idle.webp);
       height: 15%;
       max-height: 15%;
+      padding-left: 30%;
+      margin-top: 5px;
+
+      .input-label {
+        background-image: url(./assets/elements/vertical/email/label.webp);
+        aspect-ratio: 235/76;
+      }
     }
 
     #message-field {
@@ -193,6 +225,8 @@ textarea {
       height: 40%;
       max-height: 40%;
       margin-top: 5px;
+      padding-left: 5px;
+      padding-right: 2px;
     }
   }
 
