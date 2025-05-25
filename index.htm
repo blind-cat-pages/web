@@ -129,6 +129,7 @@
             // Normalize and adjust sensitivity
             const x = -deltaGamma;
             const y = -deltaBeta;
+            if (Math.abs(deltaGamma) < 1 && Math.abs(deltaBeta) < 1) return;
             const rawInput = vectorNormalize(x, y);
             rawInput.x *= 0.5; // Adjust sensitivity
             rawInput.y *= 0.5; // Adjust sensitivity
