@@ -111,18 +111,28 @@
         });
 
         if (window.DeviceOrientationEvent) {
+            let lastGamma = null;
+            let lastBeta = null;
             window.addEventListener('deviceorientation', (event) => {
-                // gamma: left-to-right tilt in degrees, range [-90,90]
-                // beta: front-to-back tilt in degrees, range [-180,180]
-                const gamma = event.gamma || 0;
-                const beta = event.beta || 0;
-                // Normalize to [-1,1] and invert, then multiply by 3
-                const x = -gamma / 90;
-                const y = -beta / 180;
-                const rawInput = vectorNormalize(x, y);
-                rawInput.x *= 10; // Adjust sensitivity
-                rawInput.y *= 10; // Adjust sensitivity
-                MoveLayers(rawInput);
+            const gamma = event.gamma || 0;
+            const beta = event.beta || 0;
+            if (lastGamma === null || lastBeta === null) {
+                lastGamma = gamma;
+                lastBeta = beta;
+                return;
+            }
+            // Calculate change in orientation
+            const deltaGamma = gamma - lastGamma;
+            const deltaBeta = beta - lastBeta;
+            lastGamma = gamma;
+            lastBeta = beta;
+            // Normalize and adjust sensitivity
+            const x = -deltaGamma / 10;
+            const y = -deltaBeta / 10;
+            const rawInput = vectorNormalize(x, y);
+            rawInput.x *= 10;
+            rawInput.y *= 10;
+            MoveLayers(rawInput);
             });
         }
 
