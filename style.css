@@ -77,19 +77,18 @@ textarea {
   resize: none;
 }
 
-#form-container {
+.input-field {
+    background-size: cover;
+    background-position: center;
+    border-image-slice: 50% 50%;
   }
 
-.input-field {
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-  }
 #about {
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
   }
+
 .input-fill {
     width: 100%;
     background-color: transparent;
