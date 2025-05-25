@@ -110,17 +110,19 @@
             MoveLayers(rawInput);
         });
 
-        if (window.DeviceMotionEvent) {
-            window.addEventListener('devicemotion', (event) => {
-            // Use accelerationIncludingGravity for more consistent results
-            const acc = event.accelerationIncludingGravity || { x: 0, y: 0 };
-            // Normalize to [-1,1] and invert, then multiply by sensitivity
-            const x = -acc.x / 9.8;
-            const y = -acc.y / 9.8;
-            const rawInput = vectorNormalize(x, y);
-            rawInput.x *= 10; // Adjust sensitivity
-            rawInput.y *= 10; // Adjust sensitivity
-            MoveLayers(rawInput);
+        if (window.DeviceOrientationEvent) {
+            window.addEventListener('deviceorientation', (event) => {
+                // gamma: left-to-right tilt in degrees, range [-90,90]
+                // beta: front-to-back tilt in degrees, range [-180,180]
+                const gamma = event.gamma || 0;
+                const beta = event.beta || 0;
+                // Normalize to [-1,1] and invert, then multiply by 3
+                const x = -gamma / 90;
+                const y = -beta / 180;
+                const rawInput = vectorNormalize(x, y);
+                rawInput.x *= 10; // Adjust sensitivity
+                rawInput.y *= 10; // Adjust sensitivity
+                MoveLayers(rawInput);
             });
         }
 
