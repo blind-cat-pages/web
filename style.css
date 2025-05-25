@@ -94,7 +94,7 @@ textarea {
     background-color: transparent;
     border: none;
     outline: none;
-    font-size: clamp(0.001rem, 2.5vw, 2rem);
+    font-size: clamp(0.001rem, 2.5vw, 0.7rem);
     min-height: none;
 }
 
@@ -173,17 +173,25 @@ textarea {
 
     button {
       background-image: url(./assets/elements/vertical/button/idle.webp);
+      height: 15%;
+      max-height: 15%;
     }
     #name-field {
       background-image: url(./assets/elements/vertical/name/idle.webp);
+      height: 15%;
+      max-height: 15%;
     }
 
     #email-field {
       background-image: url(./assets/elements/vertical/email/idle.webp);
+      height: 15%;
+      max-height: 15%;
     }
 
     #message-field {
       background-image: url(./assets/elements/vertical/message/idle.webp);
+      height: 40%;
+      max-height: 40%;
     }
   }
 
