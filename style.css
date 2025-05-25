@@ -77,19 +77,18 @@ textarea {
   resize: none;
 }
 
-#form-container {
+.input-field {
+    background-size: cover;
+    background-position: center;
+    border-image-slice: 50% 50%;
   }
 
-.input-field {
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-  }
 #about {
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
   }
+
 .input-fill {
     width: 100%;
     background-color: transparent;
@@ -194,13 +193,6 @@ textarea {
     height: 25%;
     scale: 1.2;
     margin-bottom: 17%;
-  }
-
-  #cat-back{
-    scale: 1.1;
-    img {
-      filter: brightness(0) saturate(100%) invert(54%) sepia(94%) saturate(749%) hue-rotate(338deg) brightness(101%) contrast(101%);
-    }
   }
 
   #result {
