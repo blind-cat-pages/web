@@ -116,10 +116,12 @@
                 // beta: front-to-back tilt in degrees, range [-180,180]
                 const gamma = event.gamma || 0;
                 const beta = event.beta || 0;
-                // Normalize to [-1,1]
-                const x = gamma / 90;
-                const y = beta / 180;
+                // Normalize to [-1,1] and invert, then multiply by 3
+                const x = -gamma / 90;
+                const y = -beta / 180;
                 const rawInput = vectorNormalize(x, y);
+                rawInput.x *= 3; // Adjust sensitivity
+                rawInput.y *= 3; // Adjust sensitivity
                 MoveLayers(rawInput);
             });
         }
