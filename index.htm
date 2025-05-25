@@ -130,6 +130,8 @@
             const x = -deltaGamma;
             const y = -deltaBeta;
             const rawInput = vectorNormalize(x, y);
+            rawInput.x *= 0.5; // Adjust sensitivity
+            rawInput.y *= 0.5; // Adjust sensitivity
             MoveLayers(rawInput);
             });
         }
