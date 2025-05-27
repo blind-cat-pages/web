@@ -93,40 +93,6 @@ textarea {
   box-sizing: border-box;
 }
 
-@media (max-width: 12000000px) {
-  .form_wrapper {
-    max-width: 990px;
-    padding: 0 50px 50px 76px;
-  }
-
-  #form {
-    width: 674px;
-    height: 198px;
-
-    #name-field {
-      input {
-        width: 23rem;
-        padding-left: 8rem;
-        padding-bottom: 0.25rem;
-      }
-    }
-
-    #email-field {
-      input {
-        width: 27rem;
-        padding-left: 11rem;
-        padding-top: 0.5rem;
-      }
-    }
-
-    #message-field {
-      textarea {
-        padding-top: 0.5rem;
-      }
-    }
-  }
-}
-
 .input-label {
   background-repeat: no-repeat;
   background-size: contain;
@@ -211,12 +177,6 @@ textarea {
     }
   }
 
-  #about {
-    width: 145%;
-    height: 23%;
-    background-image: url(./assets/elements/vertical/about.webp);
-  }
-
   #result {
     width: 100%;
     font-size: clamp(0.001rem, 2.5vw, 0.7rem);
@@ -236,6 +196,7 @@ textarea {
     height: 17%;
     display: flex;
     flex-direction: column;
+    margin-bottom: 10%;
 
     button {
       background-image: url(./assets/elements/vertical/button/idle.webp);
@@ -292,6 +253,6 @@ textarea {
     width: 100%;
     height: 25%;
     scale: 1.2;
-    margin-bottom: 15%;
+    margin-bottom: 80%;
   }
 }
