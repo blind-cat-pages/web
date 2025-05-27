@@ -137,12 +137,14 @@ textarea {
   }
 
   #link-container {
-    height: 15.5%;
-    width: 100%;
+    height: 15%;
+    width: 98%;
     display: flex;
     flex-direction: row;
-    align-items:flex-end;
-    justify-content:middle;
+    align-items: flex-end;
+    margin-bottom: 3%;
+    padding-top: 7%;
+    padding-left: 1%; 
 
     #vimeo-hyperlink {
       background-image: url(./assets/elements/vertical/links/vimeo/idle.webp);
