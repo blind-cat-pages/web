@@ -203,10 +203,12 @@ textarea {
   #form-container {
     width: 100%;
     height: 35%;
+    max-height: 35%;
+    min-height: 35%;
     display: flex;
     flex-direction: column;
-    margin-bottom: 2%;
-    padding-right: 10%;
+    margin-bottom: 2.5%;
+    padding-right: 1%;
     padding-left: 3%;
     align-self: flex-end;
 
@@ -214,6 +216,7 @@ textarea {
       background-image: url(./assets/elements/horizontal/button/idle.webp);
       width: 100%;
       height: 30%;
+      max-height: 30%;
       background-color: transparent;
       border: none;
       outline: none;
@@ -287,7 +290,7 @@ textarea {
       height: 100%;
       width: 50%;
       margin-top: 2%;
-      margin-left: 5%;
+      margin-left: 1%;
       padding-top: 1%;
       padding-left: 1%;
     }
@@ -428,6 +431,8 @@ textarea {
   #form-container {
     width: 80%;
     height: 20%;
+    max-height: 20%;
+    min-height: 20%;
     display: flex;
     flex-direction: column;
     margin-bottom: 0%;
@@ -537,6 +542,6 @@ textarea {
     height: 25%;
     left: auto;
     scale: 1.23;
-    margin-bottom: 75.3%;
+    margin-bottom: 72%;
   }
 }
