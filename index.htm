@@ -56,35 +56,42 @@
                     <input type="hidden" name="access_key" value="5fa9254a-2c79-49a6-a9a7-2333adfc922d">
                     <input type="hidden" name="from_name" value="Website Contact Form Submission">
                     <input type="hidden" name="subject" value="Message from blindcatvfx.com">
-
-                    <div id="name-field" class="input-field">
-                        <input class="input-fill" type="text" name="name" autocomplete="name" required="">
-                        <div class="input-label"></div>
+                    <div id="form-fields">
+                        <div id="form-contacts">
+                            <div id="name-field" class="input-field">
+                                <input class="input-fill" type="text" name="name" autocomplete="name" required="">
+                                <div class="input-label"></div>
+                            </div>
+                            <div id="email-field" class="input-field">
+                                <input class="input-fill" type="email" name="email" autocomplete="email" required="">
+                                <div class="input-label"></div>
+                            </div>
+                        </div>
+                        <div id="message-field" class="input-field">
+                            <textarea class="input-fill" name="message" rows="4" autocomplete="on"
+                                required=""></textarea>
+                        </div>
                     </div>
-                    <div id="email-field" class="input-field">
-                        <input class="input-fill" type="email" name="email" autocomplete="email" required="">
-                        <div class="input-label"></div>
-                    </div>
-                    <div id="message-field" class="input-field">
-                        <textarea class="input-fill" name="message" rows="4" autocomplete="on" required=""></textarea>
-                    </div>
-
                     <button type="submit" name="submit-button">Submit</button>
                     <div id="result"></div>
                 </form>
                 <div id="link-container">
-                    <form class="contact" id="vimeo-hyperlink" action="https://vimeo.com/blindcatvfx" method="get" target="_blank">
+                    <form class="contact" id="vimeo-hyperlink" action="https://vimeo.com/blindcatvfx" method="get"
+                        target="_blank">
                         <button class="contact-button" type="submit" class="hyperlink-button"></button>
                     </form>
-                    <form class="contact" id="linkedin-hyperlink" action="https://linkedin.com/blindcatvfx" method="get" target="_blank">
+                    <form class="contact" id="linkedin-hyperlink" action="https://linkedin.com/blindcatvfx" method="get"
+                        target="_blank">
                         <button class="contact-button" type="submit" class="hyperlink-button"></button>
                     </form>
-                    <form class="contact" id="instagram-hyperlink" action="https://instagram.com/blindcatvfx" method="get" target="_blank">
+                    <form class="contact" id="instagram-hyperlink" action="https://instagram.com/blindcatvfx"
+                        method="get" target="_blank">
                         <button class="contact-button" type="submit" class="hyperlink-button"></button>
                     </form>
                     <div class="contact"></div>
                     <div class="contact"></div>
-                    <form class="contact" id="email-hyperlink" action="mailto:hello@blindcatvfx.com" method="get" target="_blank">
+                    <form class="contact" id="email-hyperlink" action="mailto:hello@blindcatvfx.com" method="get"
+                        target="_blank">
                         <button class="contact-button" type="submit" class="hyperlink-button"></button>
                     </form>
                 </div>

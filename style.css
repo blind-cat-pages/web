@@ -199,25 +199,23 @@ textarea {
 
   #form-container {
     width: 100%;
-    height: 40%;
+    height: 35%;
     display: flex;
     flex-direction: column;
     margin-bottom: 2%;
-    padding-right: 40%;
+    padding-right: 10%;
+    padding-left: 3%;
     align-self: flex-end;
 
     button {
       background-image: url(./assets/elements/horizontal/button/idle.webp);
       width: 100%;
-      height: 15%;
-      max-height: 15%;
-      min-height: 15%;
+      height: 30%;
       background-color: transparent;
       border: none;
       outline: none;
-      padding: 0 0.5rem;
       font-size: clamp(0.001rem, 2.5vw, 1rem);
-      margin-top: 3%;
+      margin-top: 1%;
     }
 
     button:active,
@@ -225,13 +223,31 @@ textarea {
       background-image: url(./assets/elements/horizontal/button/active.webp);
     }
 
+    #form-contacts
+    {
+      height: 80%;
+      width: 50%;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+    }
+
+    #form-fields {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: row;
+      align-items: end;
+      padding-bottom: 1%;
+    }
+    
     #name-field {
       background-image: url(./assets/elements/horizontal/name/idle.webp);
-      height: 18%;
-      max-height: 18%;
-      padding-left: 32%;
+      height: 40%;
+      width: 100%;
+      padding-left: 0%;
       padding-top: 0%;
-      padding-bottom: 10%;
+      padding-bottom: 0%;
 
       .input-label {
         background-image: url(./assets/elements/horizontal/name/label.webp);
@@ -247,8 +263,7 @@ textarea {
     #email-field {
       background-image: url(./assets/elements/horizontal/email/idle.webp);
       height: 40%;
-      max-height: 40;
-      padding-left: 35%;
+      width: 100%;
       margin-top: 2%;
       padding-top: 0%;
       padding-bottom: 0.5%;
@@ -267,9 +282,10 @@ textarea {
 
     #message-field {
       background-image: url(./assets/elements/horizontal/message/idle.webp);
-      height: 50%;
-      max-height: 50%;
+      height: 100%;
+      width: 50%;
       margin-top: 2%;
+      margin-left: 5%;
     }
 
     .input-label {
@@ -402,6 +418,7 @@ textarea {
     margin-bottom: 4.5%;
     padding-right: 0%;
     padding-top: 0%;
+    padding-left: 0%;
     align-self: auto;;
 
     button {
@@ -421,6 +438,23 @@ textarea {
     button:active,
     button:hover {
       background-image: url(./assets/elements/vertical/button/active.webp);
+    }
+
+    #form-contacts
+    {
+      height: 40%;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+
+    #form-fields {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: stretch;
+      padding-bottom: 0%;
     }
 
     #name-field {
@@ -466,8 +500,10 @@ textarea {
     #message-field {
       background-image: url(./assets/elements/vertical/message/idle.webp);
       height: 50%;
+      width: 100%;
       max-height: 50%;
       margin-top: 2%;
+      margin-left: 0%;
     }
 
     .input-label {
