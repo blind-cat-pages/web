@@ -74,15 +74,6 @@ textarea {
   background-position: center;
 }
 
-.input-fill {
-  width: 100%;
-  background-color: transparent;
-  border: none;
-  outline: none;
-  font-size: clamp(0.001rem, 2.5vw, 0.7rem);
-  min-height: none;
-}
-
 .contact-button {
   width: 100%;
   height: 100%;
@@ -104,6 +95,17 @@ textarea {
 
 
 @media (max-width: 99000000px) {
+
+  .input-fill {
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    font-size: clamp(0.001rem, 2.5vw, 1rem);
+    min-height: none;
+  }
+
   .form_background {
     background-image: url(./assets/elements/horizontal/poster.webp);
     background-size: contain;
@@ -214,7 +216,7 @@ textarea {
       background-color: transparent;
       border: none;
       outline: none;
-      font-size: clamp(0.001rem, 2.5vw, 1rem);
+      font-size: clamp(0.001rem, 2.5vw, 30rem);
       margin-top: 1%;
     }
 
@@ -223,8 +225,7 @@ textarea {
       background-image: url(./assets/elements/horizontal/button/active.webp);
     }
 
-    #form-contacts
-    {
+    #form-contacts {
       height: 80%;
       width: 50%;
       display: flex;
@@ -240,17 +241,17 @@ textarea {
       align-items: end;
       padding-bottom: 1%;
     }
-    
+
     #name-field {
       background-image: url(./assets/elements/horizontal/name/idle.webp);
       height: 40%;
       width: 100%;
-      padding-left: 0%;
+      padding-left: 30%;
       padding-top: 0%;
       padding-bottom: 0%;
 
       .input-label {
-        background-image: url(./assets/elements/horizontal/name/label.webp);
+        background-image: url(./assets/elements/vertical/name/label.webp);
         aspect-ratio: 235/76;
       }
     }
@@ -266,13 +267,13 @@ textarea {
       width: 100%;
       margin-top: 2%;
       padding-top: 0%;
-      padding-bottom: 0.5%;
+      padding-bottom: 0%;
+      padding-left: 30%;
 
       .input-label {
-        background-image: url(./assets/elements/horizontal/email/label.webp);
+        background-image: url(./assets/elements/vertical/email/label.webp);
         aspect-ratio: 235/76;
         height: 100%;
-
       }
     }
 
@@ -286,10 +287,12 @@ textarea {
       width: 50%;
       margin-top: 2%;
       margin-left: 5%;
+      padding-top: 1%;
+      padding-left: 1%;
     }
 
     .input-label {
-      background-image: url(./assets/elements/horizontal/message/label.webp);
+      background-image: url(./assets/elements/vertical/message/label.webp);
       aspect-ratio: 235/76;
       margin-bottom: 10%;
     }
@@ -313,6 +316,17 @@ textarea {
 }
 
 @media (max-width: 990px) {
+
+  .input-fill {
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    font-size: clamp(0.001rem, 2.5vw, 0.7rem);
+    min-height: none;
+  }
+
   .form_background {
     background-image: url(./assets/elements/vertical/poster.webp);
     background-size: contain;
@@ -412,14 +426,14 @@ textarea {
 
   #form-container {
     width: 80%;
-    height: 17.5%;
+    height: 20%;
     display: flex;
     flex-direction: column;
-    margin-bottom: 4.5%;
+    margin-bottom: 0%;
     padding-right: 0%;
     padding-top: 0%;
     padding-left: 0%;
-    align-self: auto;;
+    align-self: auto;
 
     button {
       background-image: url(./assets/elements/vertical/button/idle.webp);
@@ -440,8 +454,7 @@ textarea {
       background-image: url(./assets/elements/vertical/button/active.webp);
     }
 
-    #form-contacts
-    {
+    #form-contacts {
       height: 40%;
       width: 100%;
       display: flex;
@@ -459,11 +472,9 @@ textarea {
 
     #name-field {
       background-image: url(./assets/elements/vertical/name/idle.webp);
-      height: 18%;
-      max-height: 18%;
+      height: 50%;
       padding-left: 32%;
       padding-top: 0%;
-      padding-bottom: 10%;
 
       .input-label {
         background-image: url(./assets/elements/vertical/name/label.webp);
@@ -478,8 +489,7 @@ textarea {
 
     #email-field {
       background-image: url(./assets/elements/vertical/email/idle.webp);
-      height: 40%;
-      max-height: 40;
+      height: 50%;
       padding-left: 35%;
       margin-top: 2%;
       padding-top: 0%;
@@ -504,6 +514,7 @@ textarea {
       max-height: 50%;
       margin-top: 2%;
       margin-left: 0%;
+      padding-top: 2%;
     }
 
     .input-label {
