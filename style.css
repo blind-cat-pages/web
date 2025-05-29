@@ -112,7 +112,7 @@ textarea {
   .input-fill {
     width: 100%;
     height: 100%;
-    background-color: transparent;
+    background-color: #40db74;
     border: none;
     outline: none;
     font-size: clamp(0.001rem, 1.5vw, 1rem);
@@ -260,7 +260,7 @@ textarea {
       width: 44%;
       display: flex;
       flex-direction: column;
-      justify-content: flex-middle;
+      justify-content: flex-center;
       padding-top: 2%;
     }
 
@@ -278,11 +278,14 @@ textarea {
       max-height: 40%;
       min-height: 40%;
       padding-left: 30%;
-      padding-top: 10%;
+      padding-top: 0%;
+      margin-top: 1;
 
       .input-label {
         background-image: url(./assets/elements/vertical/name/label.webp);
         aspect-ratio: 235/76;
+        scale: 1;
+        margin-top: 0%;
       }
     }
 
@@ -295,14 +298,16 @@ textarea {
       background-image: url(./assets/elements/horizontal/email/idle.webp);
       height: 40%;
       max-height: 40%;
-      margin-top: 1%;
-      padding-top: 10%;
+      margin-top: 2%;
+      padding-top: 1.5%;
       padding-bottom: 0%;
       padding-left: 30%;
 
       .input-label {
         background-image: url(./assets/elements/vertical/email/label.webp);
         aspect-ratio: 235/76;
+        scale: 1;
+        margin-bottom: 0%;
       }
     }
 
@@ -312,12 +317,20 @@ textarea {
 
     #message-field {
       background-image: url(./assets/elements/horizontal/message/idle.webp);
+      aspect-ratio: 736 / 167;
+      background-size: 99% 95%;
+      background-repeat: no-repeat;
       height: 80%;
-      width: 50%;
-      margin-top: 2%;
+      max-height: 80%;
+      width: 55%;
+      max-width: 100%;
+      max-height: 80%;
+      margin-top: 0%;
       margin-left: 1%;
-      padding-top: 1%;
-      padding-left: 1%;
+      padding-top: 0.8%;
+      padding-left: 0.8%;
+      padding-right: 0.8%;
+      padding-bottom: 0.8%;
     }
 
     .input-label {
@@ -381,9 +394,9 @@ textarea {
   #reel-hyperlink {
     background-color: #40db74;
     top: 54.5%;
-    left: 5%;
+    left: 10%;
     bottom: 40%;
-    right: 5%;
+    right: 10%;
   }
   #poster-container {
     position: absolute;
@@ -401,14 +414,16 @@ textarea {
   }
 
   #link-container {
-    height: 15%;
+    height: 13%;
     width: 100%;
     display: flex;
     flex-direction: row;
-    align-items: flex-end;
-    margin-bottom: 3%;
-    padding-top: 7%;
-    padding-left: 2%;
+    align-items: bottom;
+    margin-bottom: 5%;
+    margin-top: 1.2%;
+    margin-left: 1.2%;
+    padding-top: 2%;
+    padding-left: 3.2%;
 
     #vimeo-hyperlink {
       background-image: url(./assets/elements/vertical/links/vimeo/idle.webp);
@@ -463,9 +478,9 @@ textarea {
 
   #form-container {
     width: 80%;
-    height: 20%;
-    max-height: 20%;
-    min-height: 20%;
+    height: 20.3%;
+    max-height: 20.3%;
+    min-height: 20.3%;
     max-width: 80%;
     min-width: 80%;
     display: flex;
@@ -478,16 +493,16 @@ textarea {
 
     button {
       background-image: url(./assets/elements/vertical/button/idle.webp);
+      background-size: cover;
       width: 100%;
-      height: 15%;
-      max-height: 15%;
-      min-height: 15%;
+      height: 14%;
+      max-height: 14%;
+      min-height: 14%;
       background-color: transparent;
       border: none;
       outline: none;
-      padding: 0 0.5rem;
-      font-size: auto;
-      margin-top: 0%;
+      font-size: 0.1rem;
+      margin-top: 2.8%;
     }
 
     button:active,
@@ -500,6 +515,7 @@ textarea {
       width: 100%;
       display: flex;
       flex-direction: column;
+      gap: 10%;
       padding-top: 0%;
     }
 
@@ -514,18 +530,23 @@ textarea {
 
     #name-field {
       background-image: url(./assets/elements/vertical/name/idle.webp);
-      height: 48%;
-      max-height: 48%;
-      min-height: 48%;
-      padding-left: 32%;
-      padding-top: 0%;
+      background-size: 99.9% 95%;
+      background-repeat: no-repeat;
+      aspect-ratio: 481 / 34;
+      height: 57%;
+      max-height: 57%;
+      min-height: 57%;
+      padding-left: 35%;
+      padding-top: 0.4%;
+      padding-right: 1.5%;
+      padding-bottom: 3.3%;
+      margin-top: 0%;
 
       .input-label {
         background-image: url(./assets/elements/vertical/name/label.webp);
         aspect-ratio: 235/76;
         scale: 0.85;
         margin-top: 0.5%;
-        padding-left: -10%;
       }
     }
 
@@ -536,18 +557,23 @@ textarea {
 
     #email-field {
       background-image: url(./assets/elements/vertical/email/idle.webp);
-      height: 50%;
-      max-height: 50%;
-      margin-top: 2%;
-      padding-top: 0%;
-      padding-left: 32%;
-      
+      background-size: 99.9% 98%;
+      background-repeat: no-repeat;
+      aspect-ratio: 481 / 34;
+      height: 57%;
+      max-height: 57%;
+      min-height: 57%;
+      padding-left: 35%;
+      padding-top: 1%;
+      padding-right: 1.4%;
+      padding-bottom: 2.8%;
+      margin-top: 0%;
 
       .input-label {
         background-image: url(./assets/elements/vertical/email/label.webp);
         aspect-ratio: 235/76;
-        scale: 0.95;
-        margin-top: 0%;
+        scale: 0.88;
+        margin-bottom: 0%;
       }
     }
 
@@ -557,14 +583,19 @@ textarea {
 
     #message-field {
       background-image: url(./assets/elements/vertical/message/idle.webp);
-      height: 50%;
-      max-height: 50%;
+      background-size: 99% 95%;
+      background-repeat: no-repeat;
+      height: 60%;
+      max-height: 60%;
       width: 100%;
       max-width: 100%;
       max-height: 50%;
-      margin-top: 2%;
+      margin-top: 7%;
       margin-left: 0%;
-      padding-top: 2%;
+      padding-top: 2.8%;
+      padding-left: 1.6%;
+      padding-right: 1.6%;
+      padding-bottom: 1.8%;
     }
 
     .input-label {
