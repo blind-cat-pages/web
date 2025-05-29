@@ -1,0 +1,213 @@
+  /* =============================================================================
+     MOBILE STYLES (max-width: 990px)
+   ============================================================================= */
+
+@media (max-width: 990px) {
+    .form_background {
+    background-image: url(./assets/elements/vertical/poster.webp);
+    background-size: contain;
+    max-width: 500px;
+    max-height: 100vh;
+    aspect-ratio: 1080 / 1920;
+    padding: 0;
+    justify-content: center;
+}
+
+  .contact {
+    background-size: contain;
+    width: 20%;
+    height: 100%;
+    position: relative;
+    margin-left: 1.5%;
+    background-repeat: no-repeat;
+}
+
+  #reel-hyperlink {
+    background-color: #40db74;
+    top: 54.5%;
+    left: 10%;
+    bottom: 40%;
+    right: 10%;
+}
+
+  #poster-container {
+    position: absolute;
+    aspect-ratio: 690 / 1771;
+    width: 65%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-self: center;
+    align-items: center;
+}
+
+  #link-container {
+    height: 13%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: bottom;
+    margin-bottom: 5%;
+    margin-top: 1.2%;
+    margin-left: 1.2%;
+    padding-top: 2%;
+    padding-left: 3.2%;
+}
+
+  /* Mobile link hover states */
+  #vimeo-hyperlink {
+    background-image: url(./assets/elements/vertical/links/vimeo/idle.webp);
+}
+
+  #vimeo-hyperlink:hover,
+  #vimeo-hyperlink:active {
+    background-image: url(./assets/elements/vertical/links/vimeo/active.webp);
+}
+
+  #linkedin-hyperlink {
+    background-image: url(./assets/elements/vertical/links/linkedin/idle.webp);
+}
+
+  #linkedin-hyperlink:hover,
+  #linkedin-hyperlink:active {
+    background-image: url(./assets/elements/vertical/links/linkedin/active.webp);
+}
+
+  #instagram-hyperlink {
+    background-image: url(./assets/elements/vertical/links/instagram/idle.webp);
+}
+
+  #instagram-hyperlink:hover,
+  #instagram-hyperlink:active {
+    background-image: url(./assets/elements/vertical/links/instagram/active.webp);
+}
+
+  #email-hyperlink {
+    background-image: url(./assets/elements/vertical/links/mail/idle.webp);
+}
+
+  #email-hyperlink:hover,
+  #email-hyperlink:active {
+    background-image: url(./assets/elements/vertical/links/mail/active.webp);
+}
+
+  #form-container {
+    width: 80%;
+    height: 20.3%;
+    display: flex;
+    flex-direction: column;
+    align-self: auto;
+}
+
+  #form-container button {
+    background-image: url(./assets/elements/vertical/button/idle.webp);
+    background-size: cover;
+    width: 100%;
+    height: 14%;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    font-size: 0.1rem;
+    margin-top: 2.8%;
+}
+
+  #form-container button:active,
+  #form-container button:hover {
+    background-image: url(./assets/elements/vertical/button/active.webp);
+}
+
+  #form-contacts {
+    height: 40%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10%;
+}
+
+  #form-fields {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+}
+
+  #name-field {
+    background-image: url(./assets/elements/vertical/name/idle.webp);
+    background-size: 99.9% 95%;
+    background-repeat: no-repeat;
+    aspect-ratio: 481 / 34;
+    height: 57%;
+    padding-left: 35%;
+    padding-top: 0.4%;
+    padding-right: 1.5%;
+    padding-bottom: 3.3%;
+}
+
+  #name-field .input-label {
+    background-image: url(./assets/elements/vertical/name/label.webp);
+    aspect-ratio: 235/76;
+    scale: 0.85;
+    margin-top: 0.5%;
+}
+
+  #name-field:active,
+  #name-field:hover {
+    background-image: url(./assets/elements/vertical/name/active.webp);
+}
+
+  #email-field {
+    background-image: url(./assets/elements/vertical/email/idle.webp);
+    background-size: 99.9% 98%;
+    background-repeat: no-repeat;
+    aspect-ratio: 481 / 34;
+    height: 57%;
+    padding-left: 35%;
+    padding-top: 1%;
+    padding-right: 1.4%;
+    padding-bottom: 2.8%;
+}
+
+  #email-field .input-label {
+    background-image: url(./assets/elements/vertical/email/label.webp);
+    aspect-ratio: 235/76;
+    scale: 0.88;
+}
+
+  #email-field:active,
+  #email-field:hover {
+    background-image: url(./assets/elements/vertical/email/active.webp);
+}
+
+  #message-field {
+    background-image: url(./assets/elements/vertical/message/idle.webp);
+    background-size: 99% 95%;
+    background-repeat: no-repeat;
+    height: 60%;
+    width: 100%;
+    margin-top: 7%;
+    padding-top: 2.8%;
+    padding-left: 1.6%;
+    padding-right: 1.6%;
+    padding-bottom: 1.8%;
+}
+
+  #message-field .input-label {
+    background-image: url(./assets/elements/vertical/message/label.webp);
+    aspect-ratio: 235/76;
+    margin-bottom: 10%;
+}
+
+  #message-field:active,
+  #message-field:hover {
+    background-image: url(./assets/elements/vertical/message/active.webp);
+}
+
+    #cat-container {
+      position: relative;
+      width: 100%;
+      height: 25%;
+      scale: 1.23;
+      margin-bottom: 72%;
+    }
+}

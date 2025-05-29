@@ -1,0 +1,594 @@
+/* =============================================================================
+   FONTS
+   ============================================================================= */
+@font-face {
+  font-family: 'LowballRegularText-X3ax2';
+  src: url('./assets/elements/LowballRegularText-X3ax2.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* =============================================================================
+   RESET & BASE STYLES
+   ============================================================================= */
+html {
+  box-sizing: border-box;
+  height: 100%;
+  scroll-behavior: smooth;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  min-width: 100vw;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* =============================================================================
+   FORM ELEMENTS
+   ============================================================================= */
+input,
+textarea {
+  font-family: 'LowballRegularText-X3ax2', sans-serif;
+}
+
+textarea {
+  resize: none;
+}
+
+/* Prevent autofill styling changes */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+textarea:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 30px transparent inset !important;
+  -webkit-text-fill-color: inherit !important;
+  background-color: transparent !important;
+  background-image: none !important;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+/* =============================================================================
+   LAYOUT COMPONENTS
+   ============================================================================= */
+.main {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.main-bg-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  z-index: -1;
+  pointer-events: none;
+}
+
+.form_background {
+  background-image: url(./assets/elements/horizontal/poster.webp);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-end;
+  position: relative;
+  aspect-ratio: 1920 / 1080;
+}
+
+/* =============================================================================
+   INPUT FIELD COMPONENTS
+   ============================================================================= */
+.input-field {
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.input-fill {
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  font-size: clamp(0.001rem, 2.5vw, 0.7rem);
+}
+
+.input-label {
+  background-repeat: no-repeat;
+  background-size: contain;
+  position: absolute;
+  top: 4%;
+  left: 1%;
+  height: 92%;
+}
+
+/* =============================================================================
+   UTILITY COMPONENTS
+   ============================================================================= */
+.contact-button {
+  width: 100%;
+  height: 100%;
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+#about {
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+#result {
+  width: 100%;
+  font-size: clamp(0.001rem, 2.5vw, 0.7rem);
+  position: relative;
+}
+
+#result.success {
+  color: #40db74;
+}
+
+#result.error {
+  color: #ff0000;
+}
+
+#reel-hyperlink {
+  position: absolute;
+}
+
+#reel-hyperlink button {
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  font-size: auto;
+}
+
+/* =============================================================================
+   DESKTOP STYLES (Large Screens)
+   ============================================================================= */
+@media (min-width: 991px) {
+  .input-fill {
+    font-size: clamp(0.001rem, 1.5vw, 1rem);
+    background-color: #40db74;
+  }
+
+  .form_background {
+    background-size: contain;
+    height: 100%;
+    width: auto;
+    max-width: 80%;
+    padding: 0;
+    justify-content: center;
+  }
+
+  .contact {
+    background-size: contain;
+    height: 100%;
+    width: 90%;
+    position: relative;
+    margin-top: 12%;
+    background-repeat: no-repeat;
+  }
+
+  #reel-hyperlink {
+    background-color: #40db74;
+    top: 44%;
+    left: 53%;
+    bottom: 42%;
+    right: 16%;
+  }
+
+  #poster-container {
+    position: absolute;
+    width: 91%;
+    margin-left: 1%;
+    margin-top: 10%;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-self: center;
+    align-items: center;
+    aspect-ratio: 1771 / 690;
+  }
+
+  #link-container {
+    width: 17.75%;
+    height: 100%;
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: flex-end;
+    padding-right: 2%;
+    padding-bottom: 0.5%;
+  }
+
+  /* Link hover states */
+  #vimeo-hyperlink {
+    background-image: url(./assets/elements/horizontal/links/vimeo/idle.webp);
+  }
+
+  #vimeo-hyperlink:hover,
+  #vimeo-hyperlink:active {
+    background-image: url(./assets/elements/horizontal/links/vimeo/active.webp);
+  }
+
+  #linkedin-hyperlink {
+    background-image: url(./assets/elements/horizontal/links/linkedin/idle.webp);
+  }
+
+  #linkedin-hyperlink:hover,
+  #linkedin-hyperlink:active {
+    background-image: url(./assets/elements/horizontal/links/linkedin/active.webp);
+  }
+
+  #instagram-hyperlink {
+    background-image: url(./assets/elements/horizontal/links/instagram/idle.webp);
+  }
+
+  #instagram-hyperlink:hover,
+  #instagram-hyperlink:active {
+    background-image: url(./assets/elements/horizontal/links/instagram/active.webp);
+  }
+
+  #email-hyperlink {
+    background-image: url(./assets/elements/horizontal/links/mail/idle.webp);
+  }
+
+  #email-hyperlink:hover,
+  #email-hyperlink:active {
+    background-image: url(./assets/elements/horizontal/links/mail/active.webp);
+  }
+
+  #form-container {
+    width: 85%;
+    height: 42%;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1%;
+    padding-right: 1%;
+    padding-left: 3%;
+    align-self: flex-end;
+  }
+
+  #form-container button {
+    background-image: url(./assets/elements/horizontal/button/idle.webp);
+    width: 100%;
+    height: 20%;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    font-size: auto;
+    margin-top: 1%;
+  }
+
+  #form-container button:active,
+  #form-container button:hover {
+    background-image: url(./assets/elements/horizontal/button/active.webp);
+  }
+
+  #form-contacts {
+    height: 75%;
+    width: 44%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-center;
+    padding-top: 2%;
+  }
+
+  #form-fields {
+    width: 100%;
+    height: 75%;
+    display: flex;
+    flex-direction: row;
+    align-items: end;
+  }
+
+  #name-field {
+    background-image: url(./assets/elements/horizontal/name/idle.webp);
+    height: 40%;
+    padding-left: 30%;
+    margin-top: 1px;
+  }
+
+  #name-field .input-label {
+    background-image: url(./assets/elements/vertical/name/label.webp);
+    aspect-ratio: 235/76;
+    scale: 1;
+  }
+
+  #name-field:active,
+  #name-field:hover {
+    background-image: url(./assets/elements/horizontal/name/active.webp);
+  }
+
+  #email-field {
+    background-image: url(./assets/elements/horizontal/email/idle.webp);
+    height: 40%;
+    margin-top: 2%;
+    padding-top: 1.5%;
+    padding-left: 30%;
+  }
+
+  #email-field .input-label {
+    background-image: url(./assets/elements/vertical/email/label.webp);
+    aspect-ratio: 235/76;
+    scale: 1;
+  }
+
+  #email-field:active,
+  #email-field:hover {
+    background-image: url(./assets/elements/horizontal/email/active.webp);
+  }
+
+  #message-field {
+    background-image: url(./assets/elements/horizontal/message/idle.webp);
+    aspect-ratio: 736 / 167;
+    background-size: 99% 95%;
+    background-repeat: no-repeat;
+    height: 80%;
+    width: 55%;
+    margin-left: 1%;
+    padding: 0.8%;
+  }
+
+  #message-field .input-label {
+    background-image: url(./assets/elements/vertical/message/label.webp);
+    aspect-ratio: 235/76;
+    margin-bottom: 10%;
+  }
+
+  #message-field:active,
+  #message-field:hover {
+    background-image: url(./assets/elements/horizontal/message/active.webp);
+  }
+
+  #cat-container {
+    position: absolute;
+    left: 27%;
+    top: -37%;
+    width: 40%;
+    height: 18%;
+    scale: 1;
+    align-self: center;
+    margin-bottom: 75.3%;
+  }
+}
+
+/* =============================================================================
+   MOBILE STYLES (max-width: 990px)
+   ============================================================================= */
+@media (max-width: 990px) {
+  .form_background {
+    background-image: url(./assets/elements/vertical/poster.webp);
+    background-size: contain;
+    max-width: 500px;
+    max-height: 100vh;
+    aspect-ratio: 1080 / 1920;
+    padding: 0;
+    justify-content: center;
+  }
+
+  .contact {
+    background-size: contain;
+    width: 20%;
+    height: 100%;
+    position: relative;
+    margin-left: 1.5%;
+    background-repeat: no-repeat;
+  }
+
+  #reel-hyperlink {
+    background-color: #40db74;
+    top: 54.5%;
+    left: 10%;
+    bottom: 40%;
+    right: 10%;
+  }
+
+  #poster-container {
+    position: absolute;
+    aspect-ratio: 690 / 1771;
+    width: 65%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-self: center;
+    align-items: center;
+  }
+
+  #link-container {
+    height: 13%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: bottom;
+    margin-bottom: 5%;
+    margin-top: 1.2%;
+    margin-left: 1.2%;
+    padding-top: 2%;
+    padding-left: 3.2%;
+  }
+
+  /* Mobile link hover states */
+  #vimeo-hyperlink {
+    background-image: url(./assets/elements/vertical/links/vimeo/idle.webp);
+  }
+
+  #vimeo-hyperlink:hover,
+  #vimeo-hyperlink:active {
+    background-image: url(./assets/elements/vertical/links/vimeo/active.webp);
+  }
+
+  #linkedin-hyperlink {
+    background-image: url(./assets/elements/vertical/links/linkedin/idle.webp);
+  }
+
+  #linkedin-hyperlink:hover,
+  #linkedin-hyperlink:active {
+    background-image: url(./assets/elements/vertical/links/linkedin/active.webp);
+  }
+
+  #instagram-hyperlink {
+    background-image: url(./assets/elements/vertical/links/instagram/idle.webp);
+  }
+
+  #instagram-hyperlink:hover,
+  #instagram-hyperlink:active {
+    background-image: url(./assets/elements/vertical/links/instagram/active.webp);
+  }
+
+  #email-hyperlink {
+    background-image: url(./assets/elements/vertical/links/mail/idle.webp);
+  }
+
+  #email-hyperlink:hover,
+  #email-hyperlink:active {
+    background-image: url(./assets/elements/vertical/links/mail/active.webp);
+  }
+
+  #form-container {
+    width: 80%;
+    height: 20.3%;
+    display: flex;
+    flex-direction: column;
+    align-self: auto;
+  }
+
+  #form-container button {
+    background-image: url(./assets/elements/vertical/button/idle.webp);
+    background-size: cover;
+    width: 100%;
+    height: 14%;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    font-size: 0.1rem;
+    margin-top: 2.8%;
+  }
+
+  #form-container button:active,
+  #form-container button:hover {
+    background-image: url(./assets/elements/vertical/button/active.webp);
+  }
+
+  #form-contacts {
+    height: 40%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10%;
+  }
+
+  #form-fields {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  #name-field {
+    background-image: url(./assets/elements/vertical/name/idle.webp);
+    background-size: 99.9% 95%;
+    background-repeat: no-repeat;
+    aspect-ratio: 481 / 34;
+    height: 57%;
+    padding-left: 35%;
+    padding-top: 0.4%;
+    padding-right: 1.5%;
+    padding-bottom: 3.3%;
+  }
+
+  #name-field .input-label {
+    background-image: url(./assets/elements/vertical/name/label.webp);
+    aspect-ratio: 235/76;
+    scale: 0.85;
+    margin-top: 0.5%;
+  }
+
+  #name-field:active,
+  #name-field:hover {
+    background-image: url(./assets/elements/vertical/name/active.webp);
+  }
+
+  #email-field {
+    background-image: url(./assets/elements/vertical/email/idle.webp);
+    background-size: 99.9% 98%;
+    background-repeat: no-repeat;
+    aspect-ratio: 481 / 34;
+    height: 57%;
+    padding-left: 35%;
+    padding-top: 1%;
+    padding-right: 1.4%;
+    padding-bottom: 2.8%;
+  }
+
+  #email-field .input-label {
+    background-image: url(./assets/elements/vertical/email/label.webp);
+    aspect-ratio: 235/76;
+    scale: 0.88;
+  }
+
+  #email-field:active,
+  #email-field:hover {
+    background-image: url(./assets/elements/vertical/email/active.webp);
+  }
+
+  #message-field {
+    background-image: url(./assets/elements/vertical/message/idle.webp);
+    background-size: 99% 95%;
+    background-repeat: no-repeat;
+    height: 60%;
+    width: 100%;
+    margin-top: 7%;
+    padding-top: 2.8%;
+    padding-left: 1.6%;
+    padding-right: 1.6%;
+    padding-bottom: 1.8%;
+  }
+
+  #message-field .input-label {
+    background-image: url(./assets/elements/vertical/message/label.webp);
+    aspect-ratio: 235/76;
+    margin-bottom: 10%;
+  }
+
+  #message-field:active,
+  #message-field:hover {
+    background-image: url(./assets/elements/vertical/message/active.webp);
+  }
+
+  #cat-container {
+    position: relative;
+    width: 100%;
+    height: 25%;
+    scale: 1.23;
+    margin-bottom: 72%;
+  }
+}
