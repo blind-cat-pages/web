@@ -1,16 +1,3 @@
-/* =============================================================================
-   FONTS
-   ============================================================================= */
-@font-face {
-  font-family: 'LowballRegularText-X3ax2';
-  src: url('./assets/elements/LowballRegularText-X3ax2.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
-}
-
-/* =============================================================================
-   RESET & BASE STYLES
-   ============================================================================= */
 html {
   box-sizing: border-box;
   height: 100%;
@@ -32,37 +19,6 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* =============================================================================
-   FORM ELEMENTS
-   ============================================================================= */
-input,
-textarea {
-  font-family: 'LowballRegularText-X3ax2', sans-serif;
-}
-
-textarea {
-  resize: none;
-}
-
-/* Prevent autofill styling changes */
-input:-webkit-autofill,
-input:-webkit-autofill:hover,
-input:-webkit-autofill:focus,
-input:-webkit-autofill:active,
-textarea:-webkit-autofill,
-textarea:-webkit-autofill:hover,
-textarea:-webkit-autofill:focus,
-textarea:-webkit-autofill:active {
-  -webkit-box-shadow: 0 0 0 30px transparent inset !important;
-  -webkit-text-fill-color: inherit !important;
-  background-color: transparent !important;
-  background-image: none !important;
-  transition: background-color 5000s ease-in-out 0s;
-}
-
-/* =============================================================================
-   LAYOUT COMPONENTS
-   ============================================================================= */
 .main {
   height: 100vh;
   width: 100vw;
@@ -94,38 +50,31 @@ textarea:-webkit-autofill:active {
   align-items: flex-end;
   position: relative;
   aspect-ratio: 1920 / 1080;
+
 }
 
-/* =============================================================================
-   INPUT FIELD COMPONENTS
-   ============================================================================= */
+.helper-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+textarea {
+  resize: none;
+}
+
 .input-field {
   background-size: cover;
   background-position: center;
+  border-image-slice: 50% 50%;
   position: relative;
 }
 
-.input-fill {
-  width: 100%;
-  height: 100%;
-  background-color: transparent;
-  border: none;
-  outline: none;
-  font-size: clamp(0.001rem, 2.5vw, 0.7rem);
-}
-
-.input-label {
-  background-repeat: no-repeat;
+#about {
   background-size: contain;
-  position: absolute;
-  top: 4%;
-  left: 1%;
-  height: 92%;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
-/* =============================================================================
-   UTILITY COMPONENTS
-   ============================================================================= */
 .contact-button {
   width: 100%;
   height: 100%;
@@ -136,55 +85,49 @@ textarea:-webkit-autofill:active {
   box-sizing: border-box;
 }
 
-#about {
-  background-size: contain;
+.input-label {
   background-repeat: no-repeat;
-  background-position: center;
-}
-
-#result {
-  width: 100%;
-  font-size: clamp(0.001rem, 2.5vw, 0.7rem);
-  position: relative;
-}
-
-#result.success {
-  color: #40db74;
-}
-
-#result.error {
-  color: #ff0000;
+  background-size: contain;
+  top: 4%;
+  left: 1%;
+  height: 92%;
+  position: absolute;
 }
 
 #reel-hyperlink {
   position: absolute;
+
+  button {
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    font-size: auto;
+  }
 }
 
-#reel-hyperlink button {
-  width: 100%;
-  height: 100%;
-  background-color: transparent;
-  border: none;
-  outline: none;
-  font-size: auto;
-}
+@media (max-width: 99000000px) {
 
-/* =============================================================================
-   DESKTOP STYLES (Large Screens)
-   ============================================================================= */
-@media (min-width: 991px) {
   .input-fill {
-    font-size: clamp(0.001rem, 1.5vw, 1rem);
+    width: 100%;
+    height: 100%;
     background-color: #40db74;
+    border: none;
+    outline: none;
+    font-size: clamp(0.001rem, 1.5vw, 1rem);
+    min-height: none;
   }
 
   .form_background {
+    background-image: url(./assets/elements/horizontal/poster.webp);
     background-size: contain;
     height: 100%;
     width: auto;
     max-width: 80%;
     padding: 0;
     justify-content: center;
+    position: relative;
   }
 
   .contact {
@@ -225,147 +168,181 @@ textarea:-webkit-autofill:active {
     flex-direction: column-reverse;
     align-items: flex-end;
     padding-right: 2%;
+    padding-top: 0%;
     padding-bottom: 0.5%;
+
+    #vimeo-hyperlink {
+      background-image: url(./assets/elements/horizontal/links/vimeo/idle.webp);
+    }
+
+    #vimeo-hyperlink:hover,
+    #vimeo-hyperlink:active {
+      background-image: url(./assets/elements/horizontal/links/vimeo/active.webp);
+    }
+
+    #linkedin-hyperlink {
+      background-image: url(./assets/elements/horizontal/links/linkedin/idle.webp);
+    }
+
+    #linkedin-hyperlink:hover,
+    #linkedin-hyperlink:active {
+      background-image: url(./assets/elements/horizontal/links/linkedin/active.webp);
+    }
+
+    #instagram-hyperlink {
+      background-image: url(./assets/elements/horizontal/links/instagram/idle.webp);
+    }
+
+    #instagram-hyperlink:hover,
+    #instagram-hyperlink:active {
+      background-image: url(./assets/elements/horizontal/links/instagram/active.webp);
+    }
+
+    #email-hyperlink {
+      background-image: url(./assets/elements/horizontal/links/mail/idle.webp);
+    }
+
+    #email-hyperlink:hover,
+    #email-hyperlink:active {
+      background-image: url(./assets/elements/horizontal/links/mail/active.webp);
+    }
   }
 
-  /* Link hover states */
-  #vimeo-hyperlink {
-    background-image: url(./assets/elements/horizontal/links/vimeo/idle.webp);
-  }
+  #result {
+    width: 100%;
+    font-size: clamp(0.001rem, 2.5vw, 0.7rem);
+    position: relative;
 
-  #vimeo-hyperlink:hover,
-  #vimeo-hyperlink:active {
-    background-image: url(./assets/elements/horizontal/links/vimeo/active.webp);
-  }
+    &.success {
+      color: #40db74;
+    }
 
-  #linkedin-hyperlink {
-    background-image: url(./assets/elements/horizontal/links/linkedin/idle.webp);
-  }
-
-  #linkedin-hyperlink:hover,
-  #linkedin-hyperlink:active {
-    background-image: url(./assets/elements/horizontal/links/linkedin/active.webp);
-  }
-
-  #instagram-hyperlink {
-    background-image: url(./assets/elements/horizontal/links/instagram/idle.webp);
-  }
-
-  #instagram-hyperlink:hover,
-  #instagram-hyperlink:active {
-    background-image: url(./assets/elements/horizontal/links/instagram/active.webp);
-  }
-
-  #email-hyperlink {
-    background-image: url(./assets/elements/horizontal/links/mail/idle.webp);
-  }
-
-  #email-hyperlink:hover,
-  #email-hyperlink:active {
-    background-image: url(./assets/elements/horizontal/links/mail/active.webp);
+    &.error {
+      color: #ff0000;
+    }
   }
 
   #form-container {
     width: 85%;
     height: 42%;
+    max-height: 42%;
+    min-height: 42%;
+    max-width: 85%;
+    min-width: 85%;
     display: flex;
     flex-direction: column;
     margin-bottom: 1%;
     padding-right: 1%;
+    padding-top: 0%;
     padding-left: 3%;
     align-self: flex-end;
-  }
 
-  #form-container button {
-    background-image: url(./assets/elements/horizontal/button/idle.webp);
-    width: 100%;
-    height: 20%;
-    background-color: transparent;
-    border: none;
-    outline: none;
-    font-size: auto;
-    margin-top: 1%;
-  }
+    button {
+      background-image: url(./assets/elements/horizontal/button/idle.webp);
+      width: 100%;
+      height: 20%;
+      max-height: 20%;
+      background-color: transparent;
+      border: none;
+      outline: none;
+      font-size: auto;
+      margin-top: 1%;
+      min-height: 20%;
+    }
 
-  #form-container button:active,
-  #form-container button:hover {
-    background-image: url(./assets/elements/horizontal/button/active.webp);
-  }
+    button:active,
+    button:hover {
+      background-image: url(./assets/elements/horizontal/button/active.webp);
+    }
 
-  #form-contacts {
-    height: 75%;
-    width: 44%;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-center;
-    padding-top: 2%;
-  }
+    #form-contacts {
+      height: 75%;
+      width: 44%;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-center;
+      padding-top: 2%;
+    }
 
-  #form-fields {
-    width: 100%;
-    height: 75%;
-    display: flex;
-    flex-direction: row;
-    align-items: end;
-  }
+    #form-fields {
+      width: 100%;
+      height: 75%;
+      display: flex;
+      flex-direction: row;
+      align-items: end;
+    }
 
-  #name-field {
-    background-image: url(./assets/elements/horizontal/name/idle.webp);
-    height: 40%;
-    padding-left: 30%;
-    margin-top: 1px;
-  }
+    #name-field {
+      background-image: url(./assets/elements/horizontal/name/idle.webp);
+      height: 40%;
+      max-height: 40%;
+      min-height: 40%;
+      padding-left: 30%;
+      padding-top: 0%;
+      margin-top: 1;
 
-  #name-field .input-label {
-    background-image: url(./assets/elements/vertical/name/label.webp);
-    aspect-ratio: 235/76;
-    scale: 1;
-  }
+      .input-label {
+        background-image: url(./assets/elements/vertical/name/label.webp);
+        aspect-ratio: 235/76;
+        scale: 1;
+        margin-top: 0%;
+      }
+    }
 
-  #name-field:active,
-  #name-field:hover {
-    background-image: url(./assets/elements/horizontal/name/active.webp);
-  }
+    .name-field:active,
+    .name-field:hover {
+      background-image: url(./assets/elements/horizontal/name/active.webp);
+    }
 
-  #email-field {
-    background-image: url(./assets/elements/horizontal/email/idle.webp);
-    height: 40%;
-    margin-top: 2%;
-    padding-top: 1.5%;
-    padding-left: 30%;
-  }
+    #email-field {
+      background-image: url(./assets/elements/horizontal/email/idle.webp);
+      height: 40%;
+      max-height: 40%;
+      margin-top: 2%;
+      padding-top: 1.5%;
+      padding-bottom: 0%;
+      padding-left: 30%;
 
-  #email-field .input-label {
-    background-image: url(./assets/elements/vertical/email/label.webp);
-    aspect-ratio: 235/76;
-    scale: 1;
-  }
+      .input-label {
+        background-image: url(./assets/elements/vertical/email/label.webp);
+        aspect-ratio: 235/76;
+        scale: 1;
+        margin-bottom: 0%;
+      }
+    }
 
-  #email-field:active,
-  #email-field:hover {
-    background-image: url(./assets/elements/horizontal/email/active.webp);
-  }
+    .email-field:active .email-field:hover {
+      background-image: url(./assets/elements/horizontal/email/active.webp);
+    }
 
-  #message-field {
-    background-image: url(./assets/elements/horizontal/message/idle.webp);
-    aspect-ratio: 736 / 167;
-    background-size: 99% 95%;
-    background-repeat: no-repeat;
-    height: 80%;
-    width: 55%;
-    margin-left: 1%;
-    padding: 0.8%;
-  }
+    #message-field {
+      background-image: url(./assets/elements/horizontal/message/idle.webp);
+      aspect-ratio: 736 / 167;
+      background-size: 99% 95%;
+      background-repeat: no-repeat;
+      height: 80%;
+      max-height: 80%;
+      width: 55%;
+      max-width: 100%;
+      max-height: 80%;
+      margin-top: 0%;
+      margin-left: 1%;
+      padding-top: 0.8%;
+      padding-left: 0.8%;
+      padding-right: 0.8%;
+      padding-bottom: 0.8%;
+    }
 
-  #message-field .input-label {
-    background-image: url(./assets/elements/vertical/message/label.webp);
-    aspect-ratio: 235/76;
-    margin-bottom: 10%;
-  }
+    .input-label {
+      background-image: url(./assets/elements/vertical/message/label.webp);
+      aspect-ratio: 235/76;
+      margin-bottom: 10%;
+    }
 
-  #message-field:active,
-  #message-field:hover {
-    background-image: url(./assets/elements/horizontal/message/active.webp);
+    .message-field:active,
+    .message-field:hover {
+      background-image: url(./assets/elements/horizontal/message/active.webp);
+    }
   }
 
   #cat-container {
@@ -380,18 +357,29 @@ textarea:-webkit-autofill:active {
   }
 }
 
-/* =============================================================================
-   MOBILE STYLES (max-width: 990px)
-   ============================================================================= */
 @media (max-width: 990px) {
+
+  .input-fill {
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    font-size: clamp(0.001rem, 2.5vw, 0.7rem);
+    min-height: none;
+  }
+
   .form_background {
     background-image: url(./assets/elements/vertical/poster.webp);
     background-size: contain;
     max-width: 500px;
     max-height: 100vh;
+    min-width: none;
+
     aspect-ratio: 1080 / 1920;
     padding: 0;
     justify-content: center;
+    position: relative;
   }
 
   .contact {
@@ -415,11 +403,15 @@ textarea:-webkit-autofill:active {
     position: absolute;
     aspect-ratio: 690 / 1771;
     width: 65%;
+    left: auto;
+    bottom: auto;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
     align-self: center;
     align-items: center;
+    margin-top: 0%;
+    margin-left: 0%;
   }
 
   #link-container {
@@ -433,162 +425,220 @@ textarea:-webkit-autofill:active {
     margin-left: 1.2%;
     padding-top: 2%;
     padding-left: 3.2%;
+
+    #vimeo-hyperlink {
+      background-image: url(./assets/elements/vertical/links/vimeo/idle.webp);
+    }
+
+    #vimeo-hyperlink:hover,
+    #vimeo-hyperlink:active {
+      background-image: url(./assets/elements/vertical/links/vimeo/active.webp);
+    }
+
+    #linkedin-hyperlink {
+      background-image: url(./assets/elements/vertical/links/linkedin/idle.webp);
+    }
+
+    #linkedin-hyperlink:hover,
+    #linkedin-hyperlink:active {
+      background-image: url(./assets/elements/vertical/links/linkedin/active.webp);
+    }
+
+    #instagram-hyperlink {
+      background-image: url(./assets/elements/vertical/links/instagram/idle.webp);
+    }
+
+    #instagram-hyperlink:hover,
+    #instagram-hyperlink:active {
+      background-image: url(./assets/elements/vertical/links/instagram/active.webp);
+    }
+
+    #email-hyperlink {
+      background-image: url(./assets/elements/vertical/links/mail/idle.webp);
+    }
+
+    #email-hyperlink:hover,
+    #email-hyperlink:active {
+      background-image: url(./assets/elements/vertical/links/mail/active.webp);
+    }
   }
 
-  /* Mobile link hover states */
-  #vimeo-hyperlink {
-    background-image: url(./assets/elements/vertical/links/vimeo/idle.webp);
-  }
+  #result {
+    width: 100%;
+    font-size: clamp(0.001rem, 2.5vw, 0.7rem);
+    position: relative;
 
-  #vimeo-hyperlink:hover,
-  #vimeo-hyperlink:active {
-    background-image: url(./assets/elements/vertical/links/vimeo/active.webp);
-  }
+    &.success {
+      color: #40db74;
+    }
 
-  #linkedin-hyperlink {
-    background-image: url(./assets/elements/vertical/links/linkedin/idle.webp);
-  }
-
-  #linkedin-hyperlink:hover,
-  #linkedin-hyperlink:active {
-    background-image: url(./assets/elements/vertical/links/linkedin/active.webp);
-  }
-
-  #instagram-hyperlink {
-    background-image: url(./assets/elements/vertical/links/instagram/idle.webp);
-  }
-
-  #instagram-hyperlink:hover,
-  #instagram-hyperlink:active {
-    background-image: url(./assets/elements/vertical/links/instagram/active.webp);
-  }
-
-  #email-hyperlink {
-    background-image: url(./assets/elements/vertical/links/mail/idle.webp);
-  }
-
-  #email-hyperlink:hover,
-  #email-hyperlink:active {
-    background-image: url(./assets/elements/vertical/links/mail/active.webp);
+    &.error {
+      color: #ff0000;
+    }
   }
 
   #form-container {
     width: 80%;
     height: 20.3%;
+    max-height: 20.3%;
+    min-height: 20.3%;
+    max-width: 80%;
+    min-width: 80%;
     display: flex;
     flex-direction: column;
+    margin-bottom: 0%;
+    padding-right: 0%;
+    padding-top: 0%;
+    padding-left: 0%;
     align-self: auto;
-  }
 
-  #form-container button {
-    background-image: url(./assets/elements/vertical/button/idle.webp);
-    background-size: cover;
-    width: 100%;
-    height: 14%;
-    background-color: transparent;
-    border: none;
-    outline: none;
-    font-size: 0.1rem;
-    margin-top: 2.8%;
-  }
+    button {
+      background-image: url(./assets/elements/vertical/button/idle.webp);
+      background-size: cover;
+      width: 100%;
+      height: 14%;
+      max-height: 14%;
+      min-height: 14%;
+      background-color: transparent;
+      border: none;
+      outline: none;
+      font-size: 0.1rem;
+      margin-top: 2.8%;
+    }
 
-  #form-container button:active,
-  #form-container button:hover {
-    background-image: url(./assets/elements/vertical/button/active.webp);
-  }
+    button:active,
+    button:hover {
+      background-image: url(./assets/elements/vertical/button/active.webp);
+    }
 
-  #form-contacts {
-    height: 40%;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    gap: 10%;
-  }
+    #form-contacts {
+      height: 40%;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 10%;
+      padding-top: 0%;
+    }
 
-  #form-fields {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: stretch;
-  }
+    #form-fields {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: stretch;
+      padding-bottom: 0%;
+    }
 
-  #name-field {
-    background-image: url(./assets/elements/vertical/name/idle.webp);
-    background-size: 99.9% 95%;
-    background-repeat: no-repeat;
-    aspect-ratio: 481 / 34;
-    height: 57%;
-    padding-left: 35%;
-    padding-top: 0.4%;
-    padding-right: 1.5%;
-    padding-bottom: 3.3%;
-  }
+    #name-field {
+      background-image: url(./assets/elements/vertical/name/idle.webp);
+      background-size: 99.9% 95%;
+      background-repeat: no-repeat;
+      aspect-ratio: 481 / 34;
+      height: 57%;
+      max-height: 57%;
+      min-height: 57%;
+      padding-left: 35%;
+      padding-top: 0.4%;
+      padding-right: 1.5%;
+      padding-bottom: 3.3%;
+      margin-top: 0%;
 
-  #name-field .input-label {
-    background-image: url(./assets/elements/vertical/name/label.webp);
-    aspect-ratio: 235/76;
-    scale: 0.85;
-    margin-top: 0.5%;
-  }
+      .input-label {
+        background-image: url(./assets/elements/vertical/name/label.webp);
+        aspect-ratio: 235/76;
+        scale: 0.85;
+        margin-top: 0.5%;
+      }
+    }
 
-  #name-field:active,
-  #name-field:hover {
-    background-image: url(./assets/elements/vertical/name/active.webp);
-  }
+    .name-field:active,
+    .name-field:hover {
+      background-image: url(./assets/elements/vertical/name/active.webp);
+    }
 
-  #email-field {
-    background-image: url(./assets/elements/vertical/email/idle.webp);
-    background-size: 99.9% 98%;
-    background-repeat: no-repeat;
-    aspect-ratio: 481 / 34;
-    height: 57%;
-    padding-left: 35%;
-    padding-top: 1%;
-    padding-right: 1.4%;
-    padding-bottom: 2.8%;
-  }
+    #email-field {
+      background-image: url(./assets/elements/vertical/email/idle.webp);
+      background-size: 99.9% 98%;
+      background-repeat: no-repeat;
+      aspect-ratio: 481 / 34;
+      height: 57%;
+      max-height: 57%;
+      min-height: 57%;
+      padding-left: 35%;
+      padding-top: 1%;
+      padding-right: 1.4%;
+      padding-bottom: 2.8%;
+      margin-top: 0%;
 
-  #email-field .input-label {
-    background-image: url(./assets/elements/vertical/email/label.webp);
-    aspect-ratio: 235/76;
-    scale: 0.88;
-  }
+      .input-label {
+        background-image: url(./assets/elements/vertical/email/label.webp);
+        aspect-ratio: 235/76;
+        scale: 0.88;
+        margin-bottom: 0%;
+      }
+    }
 
-  #email-field:active,
-  #email-field:hover {
-    background-image: url(./assets/elements/vertical/email/active.webp);
-  }
+    .email-field:active .email-field:hover {
+      background-image: url(./assets/elements/vertical/email/active.webp);
+    }
 
-  #message-field {
-    background-image: url(./assets/elements/vertical/message/idle.webp);
-    background-size: 99% 95%;
-    background-repeat: no-repeat;
-    height: 60%;
-    width: 100%;
-    margin-top: 7%;
-    padding-top: 2.8%;
-    padding-left: 1.6%;
-    padding-right: 1.6%;
-    padding-bottom: 1.8%;
-  }
+    #message-field {
+      background-image: url(./assets/elements/vertical/message/idle.webp);
+      background-size: 99% 95%;
+      background-repeat: no-repeat;
+      height: 60%;
+      max-height: 60%;
+      width: 100%;
+      max-width: 100%;
+      max-height: 50%;
+      margin-top: 7%;
+      margin-left: 0%;
+      padding-top: 2.8%;
+      padding-left: 1.6%;
+      padding-right: 1.6%;
+      padding-bottom: 1.8%;
+    }
 
-  #message-field .input-label {
-    background-image: url(./assets/elements/vertical/message/label.webp);
-    aspect-ratio: 235/76;
-    margin-bottom: 10%;
-  }
+    .input-label {
+      background-image: url(./assets/elements/vertical/message/label.webp);
+      aspect-ratio: 235/76;
+      margin-bottom: 10%;
+    }
 
-  #message-field:active,
-  #message-field:hover {
-    background-image: url(./assets/elements/vertical/message/active.webp);
+    .message-field:active,
+    .message-field:hover {
+      background-image: url(./assets/elements/vertical/message/active.webp);
+    }
   }
 
   #cat-container {
     position: relative;
+    top: auto;
     width: 100%;
     height: 25%;
+    left: auto;
     scale: 1.23;
     margin-bottom: 72%;
   }
+}
+
+input,
+textarea {
+  font-family: 'LowballRegularText-X3ax2', sans-serif;
+}
+
+/* Prevent autofill styling changes */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+textarea:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 30px transparent inset !important;
+  -webkit-text-fill-color: inherit !important;
+  background-color: transparent !important;
+  background-image: none !important;
+  transition: background-color 5000s ease-in-out 0s;
 }
