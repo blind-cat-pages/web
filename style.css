@@ -94,7 +94,7 @@ textarea {
   position: absolute;
 }
 
-#real-hyperlink{
+#reel-hyperlink{
   position: absolute;
 
   button{
@@ -139,11 +139,11 @@ textarea {
     background-repeat: no-repeat;
   }
 
-  #real-hyperlink {
+  #reel-hyperlink {
     background-color: #40db74;
     top: 20%;
     left: 0;
-    bottom: 20%;
+    bottom: 70%;
     right: 0;
   }
 
@@ -381,6 +381,13 @@ textarea {
     background-repeat: no-repeat;
   }
 
+  #reel-hyperlink {
+    background-color: #40db74;
+    top: 54.5%;
+    left: 5%;
+    bottom: 40%;
+    right: 5%;
+  }
   #poster-container {
     position: absolute;
     aspect-ratio: 690 / 1771;
