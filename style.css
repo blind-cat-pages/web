@@ -388,10 +388,9 @@ textarea {
   #poster-container {
     position: absolute;
     aspect-ratio: 690 / 1771;
-    height: 90.8%;
-    width: auto;
+    width: 65%;
     left: auto;
-    bottom: 4%;
+    bottom: auto;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
