@@ -32,10 +32,10 @@
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
-    top: 44%;
-    left: 53%;
-    bottom: 37%;
-    right: 16%;
+    top: 43.2%;
+    left: 54.5%;
+    bottom: 37.8%;
+    right: 14%;
   }
   #reel-hyperlink:active,
   #reel-hyperlink:hover {
@@ -111,25 +111,27 @@
     display: flex;
     flex-direction: column;
     margin-bottom: 1.15%;
-    padding-right: 1%;
-    padding-left: 2.55%;
+    padding-right: 0%;
+    padding-left: 2.5%;
+    padding-bottom: 0.14%;
     align-self: flex-end;
   }
 
   #form-container button {
-    background-image: url(./assets/elements/horizontal/button/idle.webp);
-    width: 100%;
-    height: 15%;
+    width: 97.7%;
+    height: 15.5%;
     background-color: transparent;
     border: none;
     outline: none;
     font-size: auto;
-    margin-top: 1%;
+    margin-top: 0.94%;
   }
 
   #form-container button:active,
   #form-container button:hover {
     background-image: url(./assets/elements/horizontal/button/active.webp);
+    background-size: cover;
+    aspect-ratio: 1406 / 45;
   }
 
   #form-contacts {
@@ -142,7 +144,7 @@
   }
 
   #form-fields {
-    width: 100%;
+    width: 99%;
     height: 75%;
     display: flex;
     flex-direction: row;
@@ -227,5 +229,15 @@
     scale: 1;
     align-self: center;
     margin-bottom: 75.3%;
+  }
+  #stickers {
+    background-image: url(./assets/elements/horizontal/sticker.webp);
+    background-size: contain;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 83.5%;
+    left: 77.8%;
+    bottom: -5%;
+    right: 14%;
   }
 }
